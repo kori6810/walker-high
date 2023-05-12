@@ -7,7 +7,7 @@ import {
   Platform,
   StatusBar,
   Dimensions,
-  Pressable,
+  TouchableOpacity,
 } from 'react-native';
 
 const deviceHeight = Dimensions.get('window').height;
@@ -26,12 +26,12 @@ const WelcomeScreen = ({navigation, route}: any) => {
         source={require('../assets/images/logoTxt.png')}
       />
       <View style={styles.btnContainer}>
-        <Pressable style={styles.signinBtn} onPress={()=>navigation.navigate('Signup')}>
+        <TouchableOpacity style={styles.signinBtn} onPress={()=>navigation.navigate('Signup')}>
           <Text style={{fontSize:13, color:'white', fontWeight:'700'}}>회원가입</Text>
-        </Pressable>
-        <Pressable style={styles.loginBtn} onPress={()=>navigation.navigate('Login')}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.loginBtn} onPress={()=>navigation.navigate('Login')}>
           <Text style={{fontSize:13, color:'black', fontWeight:'700'}}>로그인</Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   );

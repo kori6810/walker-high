@@ -8,27 +8,35 @@ import LoginScreen from './src/screens/LoginScreen';
 import Toast from 'react-native-toast-message';
 import {toastConfig} from './src/utils/ToastMessage';
 import TermsScreen from './src/screens/signup/TermsScreen';
+import IdScreen from './src/screens/signup/IdScreen';
+import SetPasswordScreen from './src/screens/signup/SetPasswordScreen';
+import SignedUpScreen from './src/screens/signup/SignedUpScreen';
 
 const Stack = createNativeStackNavigator();
 
 const navigatorOptions: any = {
   animation: 'fade',
-  headerBackVisible: false,
-  headerTitleAlign: 'center',
+  gestureEnabled: false,
+  title: '',
+  headerStyle: {
+   
+  },
+  headerShadowVisible: false,
+
 };
 
 const SignupNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="TermsofService" screenOptions={navigatorOptions}>
-      <Stack.Screen
-        name="TermsofService"
-        component={TermsScreen}
-      />
-      
+    <Stack.Navigator
+      initialRouteName="TermsofService"
+      screenOptions={navigatorOptions}>
+      <Stack.Screen name="TermsofService" component={TermsScreen} />
+      <Stack.Screen name="IdScreen" component={IdScreen} />
+      <Stack.Screen name="SetPasswordScreen" component={SetPasswordScreen} />
+      <Stack.Screen name="SignedUpScreen" component={SignedUpScreen} options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 };
-
 
 export default function App() {
   return (

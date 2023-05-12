@@ -93,7 +93,10 @@ const TermsScreen = ({ navigation }: any) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mainContainer}>
-        <Steps/>
+        <Steps step={1}/>
+        <Text style={styles.title}>
+          Terms and Conditions
+        </Text>
         <View style={styles.joinAgree}>
           <View style={styles.agreeAll}>
             {/* <CheckBox
@@ -111,7 +114,7 @@ const TermsScreen = ({ navigation }: any) => {
         </View>
         {/* <View style={styles.agreeItemGroupContainer}>{renderItem()}</View> */}
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => console.log('next pressed')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('IdScreen')}>
         <Text style={styles.buttonText}>확인</Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -125,8 +128,12 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
-    paddingTop: 20,
+    // paddingTop: 20,
     paddingHorizontal: 15,
+  },
+  title:{
+    fontSize:25, color:'black',
+    marginTop:25
   },
   joinAgree: {
     width: '100%',
@@ -183,7 +190,7 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 60,
-    backgroundColor: '#1CBDB3',
+    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: 60,
